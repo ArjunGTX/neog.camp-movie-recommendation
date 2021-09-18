@@ -4,24 +4,41 @@ import "./styles.css";
 //creating database of web series
 const seriesObject = {
   Action: [
-    { title: "The Walking Dead", releaseDate: "31 October 2010" },
-    { title: "Game of Thrones", releaseDate: "17 April 2011" },
-    { title: "Vikings", releaseDate: "3 March 2013" }
+    {
+      title: "The Walking Dead",
+      releaseDate: "31 October 2010",
+      IMDb: "8.2/10"
+    },
+    { title: "Game of Thrones", releaseDate: "17 April 2011", IMDb: "9.2/10" },
+    { title: "Vikings", releaseDate: "3 March 2013", IMDb: "8.5/10" }
   ],
   Comedy: [
-    { title: "Sex Education", releaseDate: "11 January 2019" },
-    { title: "Friends", releaseDate: "17 April 2011" },
-    { title: "Vikings", releaseDate: "22 September 1994" }
+    { title: "Sex Education", releaseDate: "11 January 2019", IMDb: "8.3/10" },
+    { title: "Friends", releaseDate: "22 September 1994", IMDb: "8.8/10" },
+    { title: "The Office", releaseDate: "24 March 2005", IMDb: "8.9/10" }
   ],
   SciFi: [
-    { title: "Stranger Things", releaseDate: "15 July 2016" },
-    { title: "Umbrella Academy", releaseDate: "15 February 2019" },
-    { title: "Breaking Bad", releaseDate: "20 January 2008" }
+    { title: "Stranger Things", releaseDate: "15 July 2016", IMDb: "8.7/10" },
+    {
+      title: "Umbrella Academy",
+      releaseDate: "15 February 2019",
+      IMDb: "8.0/10"
+    },
+    { title: "Breaking Bad", releaseDate: "20 January 2008", IMDb: "9.4/10" }
   ],
   Crime: [
-    { title: "Money Heist", releaseDate: "2 May 2017" },
-    { title: "Peaky Blinders", releaseDate: "12 September 2013" },
-    { title: "Lucifer", releaseDate: "25 January 2016" }
+    { title: "Money Heist", releaseDate: "2 May 2017", IMDb: "8.3/10" },
+    {
+      title: "Peaky Blinders",
+      releaseDate: "12 September 2013",
+      IMDb: "8.8/10"
+    },
+    { title: "Lucifer", releaseDate: "25 January 2016", IMDb: "8.1/10" }
+  ],
+  Anime: [
+    { title: "Death Note", releaseDate: "3 October 2006", IMDb: "9.0/10" },
+    { title: "Dragon Ball Z", releaseDate: "26 April 1989", IMDb: "8.7/10" },
+    { title: "Attack on Titan", releaseDate: "7 April 2013", IMDb: "9.0/10" }
   ]
 };
 
@@ -73,12 +90,27 @@ export default function App() {
                 border: "3px solid black",
                 borderRadius: "5px",
                 width: "230px",
-                padding: "0 1rem",
+                padding: "0.5rem 1rem",
                 margin: "1rem"
               }}
             >
-              <h3>{series.title}</h3>
-              <p>{`Realese Date : ${series.releaseDate}`}</p>
+              <h2
+                style={{
+                  lineHeight: "1rem"
+                }}
+              >
+                {series.title}
+              </h2>
+              <h5
+                style={{
+                  lineHeight: ".5rem"
+                }}
+              >{`IMDb : ${series.IMDb}`}</h5>
+              <h5
+                style={{
+                  lineHeight: ".5rem"
+                }}
+              >{`Realese Date : ${series.releaseDate}`}</h5>
             </div>
           ))
         }
